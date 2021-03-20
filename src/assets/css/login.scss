@@ -1,0 +1,209 @@
+$titleFontsize: 18px;
+$textFontsize: 14px;
+$minLoginBox: 330px;
+.mask{
+  display: none;
+  .login-mask{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    .login-box{
+      width: 420px;
+      height: 380px;
+      border-radius: 10px;
+      display: flex;
+      position: relative;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      background-color: var(--color-background);
+      box-shadow: 0 0 6px rgba(0,0,0,.1);
+      padding: 25px 45px 40px;
+      .close{
+        border-radius: 3px;
+        cursor: pointer;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 29px;
+        height: 29px;
+        img{
+          width: 20px;
+          height: 20px;
+        }
+      }
+      /*标题*/
+      .login-title{
+        display: flex;
+        width: $minLoginBox;
+        height: 45px;
+        font-size: $titleFontsize;
+        .title-item:first-child{
+          border-bottom: 3px solid var(--color-text);
+        }
+        .title-item{
+          width: 64px;
+          height: 45px;
+          text-align: center;
+          display: flex;
+          li{
+            cursor: pointer;
+            margin: auto;
+          }
+        }
+      }
+
+      /*  真正的登录框*/
+      .login-part{
+        width: $minLoginBox;
+        height: 40px;
+        /*  登录方式*/
+        .login-type{
+          width: $minLoginBox;
+          height: 20px;
+          font-size: 12px;
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          margin-bottom: 5px;
+          li{
+            cursor: pointer;
+            color: var(--link-color);
+          }
+        }
+        /*  输入框*/
+        .input-content{
+          width: $minLoginBox;
+          height: 40px;
+          /*background-color: #fff;*/
+          font-size: $textFontsize;
+          display: inline-block;
+          input{
+            width: 100%;
+            height: 40px;
+            outline: 0;
+            border: 1px solid #dcdfe6;
+            border-radius: 4px;
+            color: #606060;
+            padding: 0 15px;
+            display: inline-block;
+          }
+        }
+        /*空白格*/
+        .blank{
+          width: $minLoginBox;
+          height: 20px;
+        }
+        /*  验证*/
+        .login-footer{
+          display: flex;
+          font-size: 12px;
+          position: relative;
+          width: $minLoginBox;
+          height: 20px;
+          input{
+            width: 15px;
+            height: 15px;
+          }
+          .left{
+            flex: 1;
+            position: absolute;
+            left: 0;
+            span{
+              margin-left: 5px;
+            }
+          }
+          .right{
+            flex: 1;
+            position: absolute;
+            right: 0;
+            li{
+              color: var(--link-color);
+              cursor: pointer;
+            }
+          }
+        }
+        //  登录按钮
+        .login-button{
+          width: $minLoginBox;
+          height: 40px;
+          font-size: $textFontsize;
+          input{
+            width: 100%;
+            height: 40px;
+            background-color: var(--login-color);
+            outline: 0;
+            border-radius: 4px;
+            border: 0;
+            color: #FFFFFF;
+            padding: 0 15px;
+            display: inline-block;
+            cursor: pointer;
+          }
+        }
+        .login-button:last-child{
+          input{
+            border: 1px solid #dcdfe6;
+            background-color: var(--color-background);
+            color: #606060;
+          }
+        }
+      }
+    }
+  }
+
+//  短信登录
+  /*输入手机号*/
+  input{
+    width: 100%;
+    height: 40px;
+    outline: 0;
+    border: 1px solid #dcdfe6;
+    border-radius: 4px;
+    color: #606060;
+    padding: 0 15px;
+    display: inline-block;
+  }
+  .login-phone{
+    display: none;
+    width: $minLoginBox;
+    height: 40px;
+    /*background-color: #fff;*/
+    font-size: $textFontsize;
+  }
+  /*输入验证码*/
+  .login-verification{
+    display: none;
+    width: $minLoginBox;
+    height: 40px;
+    position: relative;
+    .verification-input2{
+      width: 200px;
+      position: absolute;
+      left: 0;
+      input{
+        width: 200px;
+      }
+    }
+    .verification-btn2{
+      width: 120px;
+      height: 40px;
+      position: absolute;
+      right: 0;
+      input{
+        cursor: pointer;
+        text-align: center;
+        color: var(--color-background);
+        background-color: var(--login-color);
+      }
+    }
+  }
+}
